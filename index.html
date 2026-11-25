@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <meta name="theme-color" content="#0b1929">
+
+    <title>OS-Mobile | Guia de apresentação</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+
+        <header>
+            <span class="eyebrow">
+                OS-MOBILE • TCC / PARTE TÉCNICA
+            </span>
+
+            <h1>Guia de apresentação</h1>
+
+            <p>
+                Roteiro de fala, revisão técnica e preparação para a banca.
+            </p>
+
+            <strong class="pill">
+                Tempo total: 3min15s
+            </strong>
+        </header>
+
+        <nav>
+            <a href="#s7">Slide 7</a>
+            <a href="#s12">Slide 12</a>
+            <a href="#s13">Slide 13</a>
+            <a href="#termos">Glossário</a>
+        </nav>
+
+        <!-- SLIDE 7 -->
+
+        <section id="s7">
+
+            <span class="eyebrow">
+                SLIDE 07 • 1min15s
+            </span>
+
+            <h2>API e estrutura de dados</h2>
+
+            <div class="speech">
+
+                <p>
+                    Para o funcionamento do nosso sistema, utilizamos uma
+                    API desenvolvida com Flask, responsável pela comunicação
+                    entre o frontend e o banco de dados.
+                </p>
+
+                <p>
+                    Dentro dessa API, temos diferentes rotas, responsáveis
+                    pelo cadastro de usuários, login e gerenciamento
+                    dos dispositivos.
+                </p>
+
+                <p>
+                    Utilizamos métodos HTTP, como GET para consultar
+                    informações, POST para cadastrar, PUT para atualizar
+                    e DELETE para excluir registros.
+                </p>
+
+                <p>
+                    Quando uma requisição é realizada, o Flask recebe
+                    essas informações, valida os dados, identifica o
+                    usuário autenticado e executa a operação solicitada.
+                </p>
+
+                <p>
+                    Já para o armazenamento, utilizamos o MySQL,
+                    que centraliza as informações dos usuários,
+                    dispositivos, análises técnicas, preços e feedbacks.
+                </p>
+
+                <p>
+                    Dessa forma, conseguimos manter os dados organizados
+                    e realizar as operações de acordo com as permissões
+                    de cada usuário.
+                </p>
+
+            </div>
+
+            <h3>Rotas para revisar</h3>
+
+            <div class="grid">
+
+                <div>
+                    <code>/api/usuario</code>
+                    <br>
+                    <code>/api/login</code>
+
+                    <p>Cadastro e login</p>
+                </div>
+
+                <div>
+                    <code>/api/dispositivo</code>
+
+                    <p>GET e POST</p>
+                </div>
+
+                <div>
+                    <code>/api/dispositivo/&lt;id&gt;</code>
+
+                    <p>PUT e DELETE</p>
+                </div>
+
+            </div>
+
+            <aside>
+                Memorize: API → Rotas → Flask → MySQL.
+            </aside>
+
+        </section>
+
+        <!-- SLIDE 12 -->
+
+        <section id="s12">
+
+            <span class="eyebrow">
+                SLIDE 12 • 45s
+            </span>
+
+            <h2>Segurança e organização dos dados</h2>
+
+            <div class="speech">
+
+                <p>
+                    Em relação à segurança do sistema, utilizamos o JWT,
+                    que é um token responsável por identificar o usuário
+                    autenticado e proteger as rotas da nossa API.
+                </p>
+
+                <p>
+                    Também utilizamos recursos do Werkzeug para gerar
+                    o hash das senhas, evitando que elas sejam
+                    armazenadas em texto puro no banco de dados.
+                </p>
+
+                <p>
+                    Além disso, implementamos um controle de acesso
+                    no backend, diferenciando as permissões dos
+                    clientes e dos administradores.
+                </p>
+
+                <p>
+                    Todas essas informações são centralizadas no MySQL,
+                    e a autenticação é validada diretamente no servidor,
+                    não dependendo apenas da interface do sistema.
+                </p>
+
+            </div>
+
+            <aside>
+                Memorize: JWT → Hash → Permissões → Segurança.
+            </aside>
+
+        </section>
+
+        <!-- SLIDE 13 -->
+
+        <section id="s13">
+
+            <span class="eyebrow">
+                SLIDE 13 • 1min15s
+            </span>
+
+            <h2>Testes de software e validação</h2>
+
+            <div class="speech">
+
+                <p>
+                    Para verificar o funcionamento do sistema,
+                    definimos testes funcionais e testes de acesso.
+                </p>
+
+                <p>
+                    Nos testes funcionais, verificamos operações
+                    como cadastro, login, abertura e consulta de
+                    ordens de serviço, atualização de informações
+                    e envio e resposta de orçamentos.
+                </p>
+
+                <p>
+                    Já nos testes de acesso, o objetivo é verificar
+                    a proteção das rotas pelo JWT e a separação das
+                    permissões entre clientes e administradores.
+                </p>
+
+                <p>
+                    Por exemplo, um cliente deve conseguir consultar
+                    suas próprias solicitações, mas não deve ter
+                    acesso às funções administrativas.
+                </p>
+
+                <p>
+                    Na validação prática, a proposta é utilizar duas
+                    contas, uma de cliente e outra de administrador,
+                    executando as tarefas de cada perfil e registrando
+                    possíveis erros, dificuldades e ajustes necessários.
+                </p>
+
+                <p>
+                    O principal critério de validação é garantir que
+                    cada usuário consiga realizar suas tarefas sem
+                    acessar funcionalidades para as quais não possui
+                    autorização.
+                </p>
+
+            </div>
+
+            <aside>
+                Memorize: Testes funcionais → Testes de acesso →
+                Validação prática.
+            </aside>
+
+            <p class="warning">
+                Atenção: não afirme que todos os testes passaram
+                sem ter essa confirmação. O slide não apresenta
+                os resultados.
+            </p>
+
+        </section>
+
+        <!-- GLOSSÁRIO -->
+
+        <section id="termos">
+
+            <span class="eyebrow">
+                PREPARAÇÃO PARA A BANCA
+            </span>
+
+            <h2>Glossário técnico</h2>
+
+            <dl>
+
+                <dt>API</dt>
+                <dd>
+                    Faz a comunicação entre as partes do sistema.
+                </dd>
+
+                <dt>Flask</dt>
+                <dd>
+                    Framework Python utilizado no desenvolvimento
+                    do backend.
+                </dd>
+
+                <dt>JWT</dt>
+                <dd>
+                    Token utilizado para identificar usuários
+                    autenticados.
+                </dd>
+
+                <dt>Hash</dt>
+                <dd>
+                    Transformação da senha em um valor que não permite
+                    recuperar diretamente a senha original.
+                </dd>
+
+                <dt>Werkzeug</dt>
+                <dd>
+                    Biblioteca Python utilizada, nesse projeto,
+                    para proteger as senhas com hash.
+                </dd>
+
+                <dt>MySQL</dt>
+                <dd>
+                    Sistema de gerenciamento de banco de dados.
+                </dd>
+
+                <dt>CRUD</dt>
+                <dd>
+                    Cadastro, consulta, atualização e exclusão
+                    de registros.
+                </dd>
+
+                <dt>Backend</dt>
+                <dd>
+                    Parte do sistema responsável pelo processamento
+                    das informações e regras de negócio.
+                </dd>
+
+                <dt>OS</dt>
+                <dd>
+                    Ordem de Serviço.
+                </dd>
+
+            </dl>
+
+            <aside>
+                Não tente decorar cada palavra. Memorize a sequência
+                de assuntos e pratique em voz alta.
+            </aside>
+
+        </section>
+
+        <footer>
+            OS-Mobile • Guia de estudo para apresentação do TCC
+        </footer>
+
+    </main>
+</body>
+
+</html>
